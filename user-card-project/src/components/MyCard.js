@@ -1,19 +1,51 @@
-// import React from "react";
+import React from "react";
+import styled from "styled-components";
 
-// function MyCard(props) {
-//     return (
-//         <>
-//         {props.user.map(user => (
-//             <div key={user.id} className="user">
-//             <img src={user.img} alt={user.name} />
-//             <div>
-//                 <h3>{user.name}</h3>
-//                 </div>
-//             </div>
-//         ))}
-//         </>
+const WrapperDiv = styled.div`
+display:flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 50px;
 
-//     );
-// }
+`;
 
-// export default MyCard;
+const Image = styled.img`
+width: 300px;
+length: 300px;
+border-radius: 10px;
+margin-right: 15px;
+margin-top: 50px;
+
+`;
+
+const ContentDiv = styled.div`
+width: 800px;
+length: 400px;
+
+
+`;
+
+
+
+
+
+
+ const MyCard = props => {
+    return (
+        <WrapperDiv> 
+            <div>
+               <Image src={props.avatar_url}/> 
+            </div>
+            <ContentDiv>            
+            <h1>{props.name}</h1>
+            <p>login: {props.login}</p>
+            <p>Followers: {props.followers}</p>
+            <p>Github Url: {props.url}</p>
+            </ContentDiv>
+
+        </WrapperDiv>
+    )
+}
+
+export default MyCard;
+
